@@ -1,0 +1,41 @@
+// Basic return statements
+return 42;            // Simple integer return
+return -42;          // Negative integer (future)
+return 3.14;         // Float (future)
+return "Hello World"; // Basic string
+return "Hello\nWorld"; // String with newline escape
+return "Tab\there";  // String with tab escape
+return "";           // Empty string
+
+// Identifiers and naming
+simple_identifier;
+camelCaseIdentifier;
+PascalCaseIdentifier;
+_underscorePrefix;
+identifier_with_numbers123;
+identifier_with_underscore;
+UPPERCASE_IDENTIFIER;
+
+// Keywords (future)
+if true;
+else false;
+while running;
+for each;
+
+// Operators (future)
+x + y;
+a - b;
+multiply * divide;
+power ^ squared;
+
+// String edge cases
+return "String with \"quotes\" inside";
+return "Escaped \\backslash";
+return "Mixed\tescape\nsequences";
+return "Unicode 🔥"; // Future support
+
+// Error cases
+return 42.42.42;    // Invalid number
+return "Unterminated string;
+7invalid_identifier; // Can't start with number
+@invalid_char;      // Invalid character

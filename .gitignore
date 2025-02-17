@@ -1,0 +1,34 @@
+# Build directories
+build/
+Debug/
+Release/
+
+# IDE settings
+.vscode/
+*.code-workspace
+
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+*.cmake
+Makefile
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Executables
+*.exe
+*.out
+*.app
+Fire
+
+# OS-specific files
+.DS_Store
+.directory
+Thumbs.db
