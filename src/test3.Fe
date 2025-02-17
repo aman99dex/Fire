@@ -1,0 +1,4 @@
+// Test Fire compiler
+return "Hello, Fire!";  // String return
+return 42;             // Integer return
+return "Multi\nLine";  // String with escape
