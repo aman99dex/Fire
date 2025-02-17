@@ -1,6 +1,6 @@
-# 🔥 Fire Compiler
+# Fire Compiler
 
-> A modern compiler that melts `.Fe` (Iron) files into executable form.
+A modern C++ compiler that transforms Fe (Fire) language source code into x86_64 assembly. Built with performance and simplicity in mind.
 
 [![GitHub license](https://img.shields.io/github/license/aman99dex/Fire)](https://github.com/aman99dex/Fire/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/aman99dex/Fire)](https://github.com/aman99dex/Fire/issues)
@@ -25,23 +25,24 @@ Fire is a compiler that transforms `.Fe` (Iron) files into executable code. Just
 - Compilation = Metallurgical transformation
 - Output = Refined executable
 
-## ✨ Features
+## Features
 
-### Metallurgical Processing
-- 🔥 Keyword refinement (`return`)
-- ⚒️ Integer forging (`42`)
-- 🛠️ String tempering with escape sequences (`"Hello\nWorld"`)
-- 🏷️ Identifier hallmarking (`my_variable`)
-- 📍 Heat precision tracking (line/column reporting)
+- **Efficient Lexical Analysis**
+  - Zero-copy string handling with `string_view`
+  - Small String Optimization for tokens
+  - Precise error reporting with line/column tracking
 
-### Token Types
-| Type | Example | Description |
-|------|---------|-------------|
-| Keywords | `return` | Language reserved words |
-| Integers | `42` | Numeric literals |
-| Strings | `"Hello"` | Text in quotes |
-| Identifiers | `counter` | Variable names |
-| Symbols | `;` | Punctuation marks |
+- **Language Support**
+  - Integer literals
+  - String literals with escape sequences (`\n`, `\t`, `\"`, `\\`)
+  - Return statements
+  - Single-line comments (`// style`)
+
+- **Modern C++ Design**
+  - C++17 features
+  - RAII principles
+  - Exception safety
+  - Memory efficient
 
 ## 🚀 Getting Started
 
@@ -49,6 +50,8 @@ Fire is a compiler that transforms `.Fe` (Iron) files into executable code. Just
 - C++ compiler (GCC 9.0+)
 - CMake (3.10+)
 - Make
+- NASM assembler
+- Linux x86_64 system
 
 ### Quick Start
 ```bash
@@ -56,24 +59,31 @@ Fire is a compiler that transforms `.Fe` (Iron) files into executable code. Just
 git clone https://github.com/aman99dex/Fire.git
 cd Fire
 
-# Build the project
+# Create build directory
 mkdir build && cd build
+
+# Configure and build
 cmake ..
 make
 ```
 
 ## 📝 Usage
 
-Create a `.Fe` file:
-```fire
-return "Hello World";
-identifier_with_underscore;
-return 42;
+```bash
+# Basic usage
+./Fire input.Fe
+
+# Example with test file
+./Fire ../test/test3.Fe
 ```
 
-Run the compiler:
-```bash
-./Fire path/to/source.Fe
+## Example Code
+
+```plaintext
+// Basic Fe program
+return "Hello, World!";  // Returns and prints string
+return 42;              // Returns integer value
+return "Multi\nLine";   // String with newline
 ```
 
 ## 🛠️ Development
@@ -82,11 +92,11 @@ Run the compiler:
 ```
 Fire/
 ├── src/
-│   ├── main.cpp        # Lexical analyzer implementation
-│   └── test.Fe        # Example source file
+│   ├── main.cpp      # Compiler implementation
+│   └── test3.Fe      # Example source file
 ├── build/             # Build artifacts
 ├── CMakeLists.txt    # Build configuration
-└── README.md
+└── README.md         # This file
 ```
 
 ### Building from Source
@@ -97,25 +107,37 @@ cmake -DCMAKE_BUILD_TYPE=Debug ..
 make
 ```
 
+## Implementation Details
+
+### Lexical Analysis
+- Token types: keywords, integers, strings, identifiers
+- Efficient string handling with SSO
+- Comment skipping and whitespace handling
+- Escape sequence processing
+
+### Assembly Generation
+- NASM syntax for x86_64
+- Linux syscalls for I/O
+- String table generation
+- Efficient instruction encoding
+
 ## 🗺️ Roadmap
 
-- [ ] Extended keyword support
-- [ ] Floating-point number support
-- [ ] Enhanced escape sequences
-- [ ] Character literals
-- [ ] Improved error messages
-- [ ] Parser implementation
+- [ ] Function declarations and calls
+- [ ] Variables and expressions
+- [ ] Control flow statements
+- [ ] More data types
+- [ ] Optimization passes
+- [ ] Symbol table
+- [ ] Type checking
 
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to:
-1. Fork the repository
-2. Create a feature branch
-3. Submit a pull request
+Feel free to open issues or submit pull requests. All contributions are welcome!
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is open source and available under the MIT License.
 
 ```plaintext
 MIT License
@@ -133,9 +155,8 @@ For the complete license text, please see the [LICENSE](LICENSE) file in the rep
 
 ## 👤 Author
 
-**Aman**
-- GitHub: [@aman99dex](https://github.com/aman99dex)
-- Started: February 2025
+aman99dex (Aman)
+Started: February 2025
 
 ---
 

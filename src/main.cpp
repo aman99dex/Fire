@@ -1,39 +1,43 @@
 /******************************************************************************
  * Fire Compiler
- * First Major Project by aman99dex(Aman...)
+ * Author: aman99dex (Aman)
  * Started: February 2025
  * 
- * This is my first significant programming project - a compiler that processes
- * '.Fe' (Iron) files, melting them down into executable form. Just as fire
- * transforms iron, this compiler transforms source code into machine instructions.
+ * A modern C++ compiler for the Fe (Fire) language that transforms source code
+ * into x86_64 assembly. The name "Fire" symbolizes the transformation process,
+ * much like how fire transforms raw materials.
  * 
- * Key Features:
- * - Melts down keywords (like 'return')
- * - Forges integer literals into tokens
- * - Shapes string literals with escape sequences
- * - Identifies variable names and function signatures
- * - Precise temperature control (line and column tracking)
- * - High-efficiency crucible (string_view, unordered_map)
+ * Core Features:
+ * - Efficient lexical analysis with string_view
+ * - Small string optimization (SSO) for token values
+ * - Zero-copy string handling where possible
+ * - Escape sequence support in strings (\n, \t, \", \\)
+ * - Precise error reporting with line/column tracking
+ * - Direct assembly generation for x86_64
  * 
- * Learning Goals:
- * - Mastering the art of compilation
- * - Forging robust data structures
- * - Temperature control (I/O handling)
- * - Error detection and reporting
- * - Blueprint organization
+ * Design Principles:
+ * - Performance: Use of modern C++ features for efficiency
+ * - Memory: Minimal allocations and copying
+ * - Robustness: Strong error handling and reporting
+ * - Simplicity: Clear, well-documented code structure
  * 
- * Usage:
- * ./Fire <input.Fe>  # Melting iron into executable form
+ * Language Features:
+ * - Integer literals
+ * - String literals with escape sequences
+ * - Return statements
+ * - Comments (// style)
  * 
- * Example:
- * ./Fire test.Fe    # Watch it melt!
+ * Assembly Output:
+ * - NASM syntax for x86_64
+ * - Linux syscall interface
+ * - Position-independent code
  * 
- * Future Refinements:
- * - Additional metallurgical processes (keywords)
- * - Support for floating-point precision
- * - Enhanced heat treatment (escape sequences)
- * - Char tempering
- * - Improved error detection
+ * Future Enhancements:
+ * - Function declarations
+ * - Variables and expressions
+ * - Control flow (if/else, loops)
+ * - More data types
+ * - Optimization passes
  ******************************************************************************/
 
 // Standard library includes for I/O, containers, and string operations
